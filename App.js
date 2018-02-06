@@ -1,18 +1,17 @@
 "use strict";
 require('es6-promise').polyfill();
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-import ForumBlock from './components/ForumBlock';
-
-
-let titleText='The best Topics!';
-let messagesArray=[{header:'', message:'', code:1000}];
+import { BrowserRouter } from 'react-router-dom';
+import PagesRouter from './pages/PagesRouter';
+import PagesLinks from './pages/PagesLinks';
 
 ReactDOM.render(
-    <ForumBlock
-        title={titleText}
-        historyMessages={messagesArray}
-    />
-    , document.getElementById('container')
-);
+    <BrowserRouter>
+        <div>
+            <PagesLinks />
+            <PagesRouter />
+        </div>
+    </BrowserRouter>
+, document.getElementById('container') );
