@@ -1,0 +1,54 @@
+.ForumMessages{
+    align-self: center;
+    width: 50vw;
+    height: 20vw;
+    border: 1px solid cornflowerblue;
+    padding: 1vw;
+    margin-bottom: 1vw;
+
+}
+.FormForum{
+    width: 50vw;
+    height: 20vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.InputBlock{
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+}
+
+.HeaderMessage, .TextMessage{
+    font-size: 1.1em;
+    align-self: flex-start;
+}
+.Header-control, .Message-control, .Header-control-active, .Message-control-active{
+    width: 40vw;
+    align-self: flex-end;
+    transition: all 0.30s ease-in-out;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
+
+.Header-control, .Header-control-active {
+    height: 2vw;
+}
+.Message-control, .Message-control-active {
+    height: 7vw;
+}
+.Header-control-active, .Message-control-active{
+    border: 5px solid green;
+}
+.SendButton{
+    width: 7vw;
+    height: 3vw;
+    font-size: 1.3em;
+    background-color: cornflowerblue;
+    border-radius: 5px;
+    align-self: flex-end;
+    cursor: pointer;
+}
