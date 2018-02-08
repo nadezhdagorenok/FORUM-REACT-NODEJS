@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Route } from 'react-router-dom';
+
+import { Route, Switch } from 'react-router-dom';
 
 import Page_Home from './Page_Home';
 import Page_Cars from './Page_Cars';
@@ -14,14 +14,15 @@ class PagesRouter extends React.Component {
     render() {
 
         return (
-            <div>
-                <Route path="/home" component={Page_Home} />
+            <Switch>
+                <Route path="/" exact component={Page_Home} />
                 <Route path="/cars" component={Page_Cars} />
                 <Route path="/flowers" component={Page_Flowers} />
                 <Route path="/health" component={Page_Health} />
                 <Route path="/money" component={Page_Money} />
                 <Route path="/shops" component={Page_Shops} />
-            </div>
+             </Switch>
+
         );
 
     }
@@ -29,3 +30,26 @@ class PagesRouter extends React.Component {
 }
 
 export default PagesRouter;
+
+
+
+
+
+
+
+
+
+
+
+// /*<BrowserRouter>*/
+//                 {/*<Route path="/" component={App}>*/}
+//                     {/*<Route path="/cars" component={Page_Cars} />/*/}
+//                     {/*<Route path="/flowers" component={Page_Flowers} />*/}
+//                     {/*<Route path="/health" component={Page_Health} />*/}
+//                     {/*<Route path="/money" component={Page_Money} />*/}
+//                     {/*<Route path="/shops" component={Page_Shops} />*/}
+//                 {/*</Route>*/}
+//             {/*</BrowserRouter>,document.getElementById('container')*/}
+//         /*);*/
+
+

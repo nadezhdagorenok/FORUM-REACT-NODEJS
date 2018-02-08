@@ -7,10 +7,10 @@ class Page_Cars extends React.PureComponent {
 
     render() {
         return (
-        <CarsForumBlock
-        title={appData.cars.titleText}
-        historyMessages={appData.cars.messagesArray}
-    />
+              <CarsForumBlock
+                 title={appData.cars.titleText}
+                 historyMessages={appData.cars.messagesArray}
+              />
         );
 
     }

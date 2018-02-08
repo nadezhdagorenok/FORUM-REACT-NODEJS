@@ -3,15 +3,14 @@ require('es6-promise').polyfill();
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import {  HashRouter } from 'react-router-dom';
 import PagesRouter from './pages/PagesRouter';
-import PagesLinks from './pages/PagesLinks';
 
 ReactDOM.render(
-    <BrowserRouter>
+    <HashRouter>
         <div>
-            <PagesLinks />
             <PagesRouter />
         </div>
-    </BrowserRouter>
+    </HashRouter>
 , document.getElementById('container') );
+

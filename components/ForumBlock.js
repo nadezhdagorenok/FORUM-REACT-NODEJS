@@ -94,7 +94,7 @@ class ForumBlock extends React.PureComponent {
 
     loadData = () => {
 
-        isoFetch("http://localhost:3000/messages", {
+        isoFetch("http://localhost:3000/ messages", {
             method: 'get',
             headers: {
                 "Accept": "application/json",

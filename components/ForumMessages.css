@@ -2,7 +2,7 @@
     align-self: center;
     width: 50vw;
     height: 20vw;
-    border: 1px solid cornflowerblue;
+    border: 2px solid cornflowerblue;
     padding: 1vw;
     margin-bottom: 1vw;
 
@@ -47,8 +47,9 @@
     width: 7vw;
     height: 3vw;
     font-size: 1.3em;
-    background-color: cornflowerblue;
+    background-color: #FF4081;
     border-radius: 5px;
     align-self: flex-end;
     cursor: pointer;
+
 }

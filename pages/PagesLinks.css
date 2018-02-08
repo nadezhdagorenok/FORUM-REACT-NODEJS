@@ -1,8 +1,31 @@
 .PageLink {
-    color: black;
-    margin-right: 10px;
+    color: #FF4081;
+    margin-right: 2vw;
+    font-size: 2em;
+    position: absolute;
+}
+.own{
+    left:6vw;
+}
+.two{
+    left:26vw;
+}
+.three{
+    left:46vw;
+}
+.four{
+    left:66vw;
+}
+.five{
+    left:86vw;
 }
 
 .ActivePageLink {
     font-weight: bold;
+    text-decoration: underline;
+    color:red;
+}
+.listBlock{
+    margin-top: 10vw;
+    position: relative;
 }

@@ -58,6 +58,7 @@ class ForumBlock extends React.PureComponent {
 
     };
     formSubmit = () => {
+        console.log(this.state.newHeader, this.state.newMessage);
 
        return isoFetch("http://localhost:3000/messages", {
             method: 'post',
