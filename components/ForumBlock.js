@@ -20,8 +20,8 @@ class ForumBlock extends React.PureComponent {
             newMessage:'',
             messageArray: this.props.historyMessages,
             countMessage: 0,
-            isChangeText:false,
-            isChangeHeader: false,
+            // isChangeText:false,
+            // isChangeHeader: false,
             isClickOnOpen: false,
             openHeaderModalWindow: '',
             openMessageModalWindow: '',
@@ -38,25 +38,26 @@ class ForumBlock extends React.PureComponent {
         ),
     };
 
-    headerTextChange = (value) => {
-        console.log('изменено поле заголовка ' + value);
-        this.setState( {newHeader:value, isChangeHeader:true});
-    };
-    messageTextChange = (mes) => {
-        console.log('изменено поле сообщения ' + mes);
-        this.setState( {newMessage:mes, isChangeText:true});
-    };
-    Clicked = ()=> {
-        if (this.state.isChangeHeader && this.state.isChangeText) {
+    // headerTextChange = (value) => {
+    //     console.log('изменено поле заголовка ' + value);
+    //     this.setState( {newHeader:value, isChangeHeader:true});
+    // };
+    // messageTextChange = (mes) => {
+    //     console.log('изменено поле сообщения ' + mes);
+    //     this.setState( {newMessage:mes, isChangeText:true});
+    // };
+    Clicked = (mes)=> {
+        // if (this.state.isChangeHeader && this.state.isChangeText) {
 
-            let mes ={};
-            mes.header = this.state.newHeader;
-            mes.message = this.state.newMessage;
-            this.formSubmit();
-            this.setState({isChangeHeader: false, isChangeText: false});
+            // let mes ={};
+            // mes.header = this.state.newHeader;
+            // mes.message = this.state.newMessage;
+console.log(mes);
+            this.setState({newHeader: mes.header, newMessage: mes.message}, this.formSubmit);
+
         }
 
-    };
+
     formSubmit = () => {
 
        return isoFetch("http://localhost:3000/messages", {
@@ -144,14 +145,9 @@ class ForumBlock extends React.PureComponent {
         return (
             <div className='ForumBlock'>
                 <ForumTitle title={this.props.title}/>
-                <ForumMessages  cbHeaderTextChanged={this.headerTextChange}
-                                cbSendClicked={this.Clicked}
-                                cbMessageTextChange={this.messageTextChange}
-                                newHeader={this.state.newHeader}
-                                newMessage={this.state.newMessage}
+                <ForumMessages  cbSendClicked={this.Clicked}
                                 valueButton='Send'
                                 typeButton = 'submit'
-
                 />
                 <div className='CountMessage'>
                     <span>Number of messages: </span>

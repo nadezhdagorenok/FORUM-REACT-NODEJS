@@ -9,19 +9,18 @@ import ForumHistory from './ForumHistory';
 
 
 
-class ForumBlock extends React.PureComponent {
+class CarsForumBlock extends React.PureComponent {
     constructor(props) {
         super(props);
         this.loadData();
         this.state = {
             dataReady: false,
-            selectedAnswerCode: null,
             newHeader:'',
             newMessage:'',
             messageArray: this.props.historyMessages,
             countMessage: 0,
-            isChangeText:false,
-            isChangeHeader: false,
+            // isChangeText:false,
+            // isChangeHeader: false,
             isClickOnOpen: false,
             openHeaderModalWindow: '',
             openMessageModalWindow: '',
@@ -38,46 +37,46 @@ class ForumBlock extends React.PureComponent {
         ),
     };
 
-    headerTextChange = (value) => {
-        console.log('изменено поле заголовка ' + value);
-        this.setState( {newHeader:value, isChangeHeader:true});
-    };
-    messageTextChange = (mes) => {
-        console.log('изменено поле сообщения ' + mes);
-        this.setState( {newMessage:mes, isChangeText:true});
-    };
-    Clicked = ()=> {
-        if (this.state.isChangeHeader && this.state.isChangeText) {
+    // headerTextChange = (value) => {
+    //     console.log('изменено поле заголовка ' + value);
+    //     this.setState( {newHeader:value, isChangeHeader:true});
+    // };
+    // messageTextChange = (mes) => {
+    //     console.log('изменено поле сообщения ' + mes);
+    //     this.setState( {newMessage:mes, isChangeText:true});
+    // };
+    Clicked = (mes)=> {
+        // if (this.state.isChangeHeader && this.state.isChangeText) {
 
-            let mes ={};
-            mes.header = this.state.newHeader;
-            mes.message = this.state.newMessage;
-            this.formSubmit();
-            this.setState({isChangeHeader: false, isChangeText: false});
-        }
+        // let mes ={};
+        // mes.header = this.state.newHeader;
+        // mes.message = this.state.newMessage;
+        console.log(mes);
+        this.setState({newHeader: mes.header, newMessage: mes.message}, this.formSubmit);
 
-    };
+    }
+
+
     formSubmit = () => {
-        console.log(this.state.newHeader, this.state.newMessage);
 
-       return isoFetch("http://localhost:3000/messages", {
+        return isoFetch("http://localhost:3000/messages", {
             method: 'post',
             headers: {
                 "Accept": "application/json",
                 'Content-Type': 'application/json'
             },
-                body: JSON.stringify(
-                    {
+            body: JSON.stringify(
+                {
                     header: this.state.newHeader,
                     message: this.state.newMessage,
                 })
-            }).then((response) => response.json())
-                .then((responseJson) => {
-                    return responseJson.success;
-                })
-                .catch((error) => {
-                    this.fetchError(error.message);
-                });
+        }).then((response) => response.json())
+            .then((responseJson) => {
+                return responseJson.success;
+            })
+            .catch((error) => {
+                this.fetchError(error.message);
+            });
     };
 
     fetchError = (errorMessage) => {
@@ -145,14 +144,9 @@ class ForumBlock extends React.PureComponent {
         return (
             <div className='ForumBlock'>
                 <ForumTitle title={this.props.title}/>
-                <ForumMessages  cbHeaderTextChanged={this.headerTextChange}
-                                cbSendClicked={this.Clicked}
-                                cbMessageTextChange={this.messageTextChange}
-                                newHeader={this.state.newHeader}
-                                newMessage={this.state.newMessage}
+                <ForumMessages  cbSendClicked={this.Clicked}
                                 valueButton='Send'
                                 typeButton = 'submit'
-
                 />
                 <div className='CountMessage'>
                     <span>Number of messages: </span>
@@ -180,7 +174,7 @@ class ForumBlock extends React.PureComponent {
 
 }
 
-export default ForumBlock;
+export default CarsForumBlock;
 
 
 
