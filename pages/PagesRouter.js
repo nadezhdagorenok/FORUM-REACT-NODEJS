@@ -12,11 +12,10 @@ import Page_Shops from './Page_Shops';
 class PagesRouter extends React.Component {
 
     render() {
-
         return (
             <Switch>
                 <Route path="/" exact component={Page_Home} />
-                <Route path="/cars" component={Page_Cars} />
+                <Route path="/cars" component={Page_Cars}></Route>
                 <Route path="/flowers" component={Page_Flowers} />
                 <Route path="/health" component={Page_Health} />
                 <Route path="/money" component={Page_Money} />

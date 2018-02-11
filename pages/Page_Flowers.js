@@ -8,8 +8,8 @@ class Page_Flowers extends React.PureComponent {
     render() {
         return (
         <FlowersForumBlock
-        title={appData.flowers.titleText}
-        historyMessages={appData.flowers.messagesArray}
+        title={appData.data.flowers.titleText}
+        historyMessages={appData.data.flowers.messagesArray}
     />
         );
 

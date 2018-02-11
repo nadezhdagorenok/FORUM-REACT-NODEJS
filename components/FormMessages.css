@@ -1,4 +1,4 @@
-.ForumMessages{
+.FormMessages{
     align-self: center;
     width: 50vw;
     height: 20vw;
@@ -33,7 +33,6 @@
     transition: all 0.30s ease-in-out;
     box-shadow: 0 0 5px rgba(81, 203, 238, 1);
 }
-
 .Header-control, .Header-control-active {
     height: 2vw;
 }

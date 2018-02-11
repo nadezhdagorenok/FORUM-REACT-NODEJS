@@ -19,11 +19,12 @@
 .OpenLink{
     text-decoration: none;
     align-self: flex-end!important;
-    color: cornflowerblue;
+    color: #FF4081;
+    font-size : 1.1em;
 }
 .OpenLink:hover{
     cursor: pointer;
-    color: blueviolet;
+    color: red;
     font-size : 1.2em;
     text-decoration: underline;
 }

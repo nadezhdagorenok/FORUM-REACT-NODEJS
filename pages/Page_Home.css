@@ -1,0 +1,15 @@
+.homeBlock{
+    margin-top:4vw;
+}
+.homeBlock div:first-child{
+    color: #fff;
+    font-size: 4em;
+    padding-left:40vw;
+}
+.homeBlock div:last-child img {
+    width: 80vw;
+    height: 30vw;
+    margin-top: 5vw;
+    padding-left:10vw;
+}
+

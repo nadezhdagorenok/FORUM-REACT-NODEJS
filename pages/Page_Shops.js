@@ -8,8 +8,8 @@ class Page_Shops extends React.PureComponent {
     render() {
         return (
         <ShopsForumBlock
-        title={appData.shops.titleText}
-        historyMessages={appData.shops.messagesArray}
+        title={appData.data.shops.titleText}
+        historyMessages={appData.data.shops.messagesArray}
     />
         );
 

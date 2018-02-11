@@ -8,8 +8,8 @@ class Page_Health extends React.PureComponent {
     render() {
         return (
         <HealthForumBlock
-        title={appData.health.titleText}
-        historyMessages={appData.health.messagesArray}
+        title={appData.data.health.titleText}
+        historyMessages={appData.data.health.messagesArray}
     />
         );
 

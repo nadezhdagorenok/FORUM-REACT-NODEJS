@@ -8,8 +8,8 @@ class Page_Cars extends React.PureComponent {
     render() {
         return (
               <CarsForumBlock
-                 title={appData.cars.titleText}
-                 historyMessages={appData.cars.messagesArray}
+                 title={appData.data.cars.titleText}
+                 historyMessages={appData.data.cars.messagesArray}
               />
         );
 

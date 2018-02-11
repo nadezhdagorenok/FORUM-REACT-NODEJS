@@ -20,6 +20,7 @@ class ForumBlock extends React.PureComponent {
             newMessage:'',
             messageArray: this.props.historyMessages,
             countMessage: 0,
+            isPost:false,
             // isChangeText:false,
             // isChangeHeader: false,
             isClickOnOpen: false,
@@ -53,7 +54,7 @@ class ForumBlock extends React.PureComponent {
             // mes.header = this.state.newHeader;
             // mes.message = this.state.newMessage;
 console.log(mes);
-            this.setState({newHeader: mes.header, newMessage: mes.message}, this.formSubmit);
+            this.setState({newHeader: mes.header, newMessage: mes.message, isPost:false}, this.formSubmit);
 
         }
 
@@ -91,6 +92,9 @@ console.log(mes);
             messageArray: loadedData.reverse(),
             countMessage: loadedData.length,
         });
+    };
+    load = () => {
+        this.setState({isPost:true});
     };
 
     loadData = () => {
@@ -146,6 +150,7 @@ console.log(mes);
             <div className='ForumBlock'>
                 <ForumTitle title={this.props.title}/>
                 <ForumMessages  cbSendClicked={this.Clicked}
+                                cbResetForm={this.load}
                                 valueButton='Send'
                                 typeButton = 'submit'
                 />

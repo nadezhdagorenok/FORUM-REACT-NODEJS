@@ -1,49 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './ForumMessages.css';
+import './FormMessages.css';
 
 
-class ForumMessages extends React.PureComponent {
-// newHeader: PropTypes.string.isRequired,
-    // newMessage: PropTypes.string.isRequired,
-    // cbHeaderTextChanged: PropTypes.func.isRequired,
-    // cbMessageTextChange: PropTypes.func.isRequired,
+class FormMessages extends React.PureComponent {
+
     static propTypes = {
         cbSendClicked: PropTypes.func.isRequired,
         valueButton: PropTypes.string.isRequired,
-        typeButton: PropTypes.string.isRequired,
+        typeButton: PropTypes.string.isRequired
     };
     state = {
         header:'',
         message:'',
     };
 
-
     headerTextChange = (EO) => {
         console.log('HeaderMessage: текст свободного ввода заголовка изменён - '+EO.target.value);
         this.setState({header: EO.target.value});
-       // this.props.cbHeaderTextChanged(EO.target.value);
     };
 
     messageTextChange = (EO) => {
         console.log('TextMessage: текст свободного ввода текста изменён - '+EO.target.value);
         this.setState({message: EO.target.value});
-        //this.props.cbMessageTextChange(EO.target.value);
     };
 
     sendButton = (EO) => {
         console.log('Кнопка send нажата - ');
-        EO.preventDefault();
         let mes = {header : this.state.header, message : this.state.message};
         console.log(mes);
         this.props.cbSendClicked(mes);
-        this.setState({header: '', message: ''});
     };
 
     render() {
-        console.log('Render ForumMessages');
+        console.log('Render FormMessages');
         return (
-            <div className='ForumMessages'>
+            <div className='FormMessages'>
                 <form className='FormForum'>
                     <div className='InputBlock'>
                         <label htmlFor='header' className='HeaderMessage'>Header</label>
@@ -58,20 +50,15 @@ class ForumMessages extends React.PureComponent {
             </div>
         )
     }
-
 }
-
-
-
 function Button (props) {
         return (
             <button className = 'SendButton' onClick={props.onClick} type={props.type} disabled={props.disabled}>
                 {props.value}
             </button>
         );
-
 }
 
-export default ForumMessages;
+export default FormMessages;
 
 

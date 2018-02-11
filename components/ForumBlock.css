@@ -3,7 +3,6 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    position: relative;
 }
 
 .HeaderMessageBlock{
@@ -44,12 +43,12 @@
 }
 
 .MessageModalWindow{
-    position: absolute;
+    position: fixed;
     left: 25vw;
     top: 5vw;
     z-index: 100;
     width: 50vw;
-    height:40vw;
+    height:30vw;
     border: 1px solid black;
     border-radius: 5px;
     background-color: gainsboro;

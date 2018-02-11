@@ -4,29 +4,25 @@ import {default as isoFetch} from 'isomorphic-fetch';
 
 import './ForumBlock.css';
 import ForumTitle from './ForumTitle';
-import ForumMessages from './ForumMessages';
+import FormMessages from './FormMessages';
 import ForumHistory from './ForumHistory';
 
 
 
-class ForumBlock extends React.PureComponent {
+class HealthForumBlock extends React.PureComponent {
     constructor(props) {
         super(props);
-        this.loadData();
         this.state = {
             dataReady: false,
-            selectedAnswerCode: null,
-            newHeader:'',
-            newMessage:'',
             messageArray: this.props.historyMessages,
             countMessage: 0,
-            isChangeText:false,
-            isChangeHeader: false,
+            isPostRequest:false,
             isClickOnOpen: false,
             openHeaderModalWindow: '',
             openMessageModalWindow: '',
         };
     }
+
     static propTypes = {
         title: PropTypes.string.isRequired,
         historyMessages: PropTypes.arrayOf(
@@ -38,45 +34,30 @@ class ForumBlock extends React.PureComponent {
         ),
     };
 
-    headerTextChange = (value) => {
-        console.log('изменено поле заголовка ' + value);
-        this.setState( {newHeader:value, isChangeHeader:true});
+    componentDidMount() {
+        this.loadData();
+        console.log('Данные загружаются!');
     };
-    messageTextChange = (mes) => {
-        console.log('изменено поле сообщения ' + mes);
-        this.setState( {newMessage:mes, isChangeText:true});
-    };
-    Clicked = ()=> {
-        if (this.state.isChangeHeader && this.state.isChangeText) {
 
-            let mes ={};
-            mes.header = this.state.newHeader;
-            mes.message = this.state.newMessage;
-            this.formSubmit();
-            this.setState({isChangeHeader: false, isChangeText: false});
-        }
+    formSubmit = (mes) => {
 
-    };
-    formSubmit = () => {
-
-       return isoFetch("http://localhost:3000/messages", {
+        isoFetch("http://localhost:3000/messages", {
             method: 'post',
             headers: {
                 "Accept": "application/json",
                 'Content-Type': 'application/json'
             },
-                body: JSON.stringify(
-                    {
-                    header: this.state.newHeader,
-                    message: this.state.newMessage,
-                })
-            }).then((response) => response.json())
-                .then((responseJson) => {
-                    return responseJson.success;
-                })
-                .catch((error) => {
-                    this.fetchError(error.message);
-                });
+            body: JSON.stringify({type:'health', header: mes.header, message:mes.header})
+        }).then((response) => response.json())
+            .then((responseJson) => {
+                return responseJson.success;
+            })
+            .then((success) =>{ if(success) {this.setState({isPostRequest: true}); }})
+            .catch((error) => {
+                this.fetchError(error.message);
+            });
+
+
     };
 
     fetchError = (errorMessage) => {
@@ -86,15 +67,17 @@ class ForumBlock extends React.PureComponent {
         console.log(loadedData);
 
         this.setState({
+            isPostRequest: false,
             dataReady:true,
             messageArray: loadedData.reverse(),
-            countMessage: loadedData.length,
+            countMessage: loadedData.length
         });
+        console.log('this.state.messageArray в fetchSuccess', this.state.messageArray);
     };
 
-    loadData = () => {
 
-        isoFetch("http://localhost:3000/messages", {
+    loadData = () => {
+        isoFetch("http://localhost:3000/messages?type=health", {
             method: 'get',
             headers: {
                 "Accept": "application/json",
@@ -127,12 +110,10 @@ class ForumBlock extends React.PureComponent {
     openMessage = (openHeader, openMessage) => {
         console.log('Open message');
         this.setState({isClickOnOpen:true, openHeaderModalWindow: openHeader, openMessageModalWindow: openMessage});
-
-
     };
 
     render() {
-        console.log('Render ForumBlock');
+        console.log('Render HealthForumBlock');
 
         if ( !this.state.dataReady )
             return <div>data load...</div>;
@@ -144,14 +125,9 @@ class ForumBlock extends React.PureComponent {
         return (
             <div className='ForumBlock'>
                 <ForumTitle title={this.props.title}/>
-                <ForumMessages  cbHeaderTextChanged={this.headerTextChange}
-                                cbSendClicked={this.Clicked}
-                                cbMessageTextChange={this.messageTextChange}
-                                newHeader={this.state.newHeader}
-                                newMessage={this.state.newMessage}
+                <FormMessages  cbSendClicked={this.formSubmit}
                                 valueButton='Send'
                                 typeButton = 'submit'
-
                 />
                 <div className='CountMessage'>
                     <span>Number of messages: </span>
@@ -170,8 +146,6 @@ class ForumBlock extends React.PureComponent {
                         </div>
                     )
                 }
-
-
             </div>
         );
 
@@ -179,8 +153,9 @@ class ForumBlock extends React.PureComponent {
 
 }
 
-export default ForumBlock;
+export default HealthForumBlock;
 
 
 
 
+///

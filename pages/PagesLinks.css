@@ -3,6 +3,7 @@
     margin-right: 2vw;
     font-size: 2em;
     position: absolute;
+
 }
 .own{
     left:6vw;
@@ -26,6 +27,6 @@
     color:red;
 }
 .listBlock{
-    margin-top: 10vw;
+    margin-top: 3vw;
     position: relative;
 }
