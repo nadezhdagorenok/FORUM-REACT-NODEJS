@@ -1,0 +1,216 @@
+.PageLink {
+    color: #FF4081;
+    margin-right: 2vw;
+    font-size: 2em;
+    position: absolute;
+}
+.own{
+    left:6vw;
+}
+.two{
+    left:26vw;
+}
+.three{
+    left:46vw;
+}
+.four{
+    left:66vw;
+}
+.five{
+    left:86vw;
+}
+
+.ActivePageLink {
+    font-weight: bold;
+    text-decoration: underline;
+    color:red;
+}
+.listBlock{
+    margin-top: 10vw;
+    position: relative;
+}
+.homeBlock{
+    margin-top:5vw;
+}
+.homeBlock div:first-child{
+    color: #fff;
+    font-size: 4em;
+    padding-left:40vw;
+}
+.ForumBlock{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.HeaderMessageBlock{
+    border: 1px dashed black;
+    margin-bottom: 1vw;
+    padding: 0 1vw;
+}
+
+.MessageBlock{
+    width: 52vw;
+}
+
+.HeaderBlock{
+    padding: .5vw 0;
+    font-weight: 800;
+    font-size: 1.2em;
+}
+
+.MessageBlock{
+    padding: .5vw 0;
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.CountMessage{
+    align-self: center;
+    width: 50vw;
+}
+
+.CountMessage span:last-of-type{
+    color: red;
+    font-size: 1.3em;
+}
+
+.CountMessage span:first-of-type{
+    font-style: italic;
+}
+
+.MessageModalWindow{
+    position: absolute;
+    left: 25vw;
+    top: 5vw;
+    z-index: 100;
+    width: 50vw;
+    height:40vw;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: gainsboro;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.MessageModalWindow ul{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+    border: 3px solid black;
+
+}
+.MessageModalWindow ul li:first-of-type{
+    font-weight: 800;
+    font-size: 1.2em;
+}
+.MessageModalWindow li{
+    font-size: 1.2em;
+    list-style: none;
+    margin: 2vw 0;
+}
+
+.MessageModalWindow button{
+    width: 5vw;
+    align-self: flex-end;
+    cursor:pointer;
+    height: 3vw;
+    color: red;
+    font-size: 1.2em;
+    margin: 0 1vw 1vw 0 ;
+    border-radius: 5px;
+
+}
+.ForumTitle{
+    width: 50vw;
+    height: 7vw;
+    align-self: center;
+    text-align: center;
+}.ForumMessages{
+    align-self: center;
+    width: 50vw;
+    height: 20vw;
+    border: 2px solid cornflowerblue;
+    padding: 1vw;
+    margin-bottom: 1vw;
+
+}
+.FormForum{
+    width: 50vw;
+    height: 20vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.InputBlock{
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+}
+
+.HeaderMessage, .TextMessage{
+    font-size: 1.1em;
+    align-self: flex-start;
+}
+.Header-control, .Message-control, .Header-control-active, .Message-control-active{
+    width: 40vw;
+    align-self: flex-end;
+    transition: all 0.30s ease-in-out;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
+
+.Header-control, .Header-control-active {
+    height: 2vw;
+}
+.Message-control, .Message-control-active {
+    height: 7vw;
+}
+.Header-control-active, .Message-control-active{
+    border: 5px solid green;
+}
+.SendButton{
+    width: 7vw;
+    height: 3vw;
+    font-size: 1.3em;
+    background-color: #FF4081;
+    border-radius: 5px;
+    align-self: flex-end;
+    cursor: pointer;
+
+}
+.HeaderMessageBlock{
+    border: 1px dashed black;
+    margin-bottom: 1vw;
+    padding: 0 1vw;
+    list-style: none!important;
+    display: flex;
+    flex-direction: column;
+
+}
+.MessageBlock{
+    width: 52vw;
+    padding: 1vw 0;
+}
+.HeaderBlock{
+    padding: 1vw 0;
+    font-weight: 800;
+    font-size: 1.2em;
+}
+.OpenLink{
+    text-decoration: none;
+    align-self: flex-end!important;
+    color: cornflowerblue;
+}
+.OpenLink:hover{
+    cursor: pointer;
+    color: blueviolet;
+    font-size : 1.2em;
+    text-decoration: underline;
+}
