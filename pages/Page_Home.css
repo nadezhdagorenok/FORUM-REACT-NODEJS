@@ -1,15 +1,23 @@
 .homeBlock{
-    margin-top:4vw;
+    margin-top:2vw;
+    position: relative;
+}
+.forum{
+    margin-bottom: 10vw;
 }
 .homeBlock div:first-child{
     color: #fff;
     font-size: 4em;
-    padding-left:40vw;
-}
+    padding-left:38vw;
+    position: absolute;
+    top: 6vw;
+ }
 .homeBlock div:last-child img {
     width: 80vw;
     height: 30vw;
     margin-top: 5vw;
     padding-left:10vw;
+    position: absolute;
+    top: 10vw;
 }
 

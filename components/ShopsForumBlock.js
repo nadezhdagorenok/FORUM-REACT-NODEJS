@@ -6,6 +6,7 @@ import './ForumBlock.css';
 import ForumTitle from './ForumTitle';
 import FormMessages from './FormMessages';
 import ForumHistory from './ForumHistory';
+import PagesLinks from '../pages/PagesLinks'
 
 
 

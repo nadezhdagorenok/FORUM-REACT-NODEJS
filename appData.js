@@ -14,7 +14,7 @@ let dataList = {
             messagesArray: [{header: '', message: '', code: 1000}]
         },
         money: {
-            titleText: "Currency exchanges, Deposites, Rates!",
+            titleText: "Currency exchanges, Deposites!",
             messagesArray: [{header: '', message: '', code: 1000}]
         },
         shops: {

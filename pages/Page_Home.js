@@ -8,8 +8,8 @@ class Page_Home extends React.Component {
     render() {
         return (
             <div className="homeBlock">
-                <div><span>FORUM</span></div>
-                <PagesLinks/>
+                <div className="forum"><span>FORUM</span></div>
+
                 <div><img src = {appData.image}/></div>
             </div>
         );
@@ -18,3 +18,6 @@ class Page_Home extends React.Component {
 }
 
 export default Page_Home;
+
+
+/*<PagesLinks/>*/

@@ -3,22 +3,27 @@
     margin-right: 2vw;
     font-size: 2em;
     position: absolute;
-
+}
+.home{
+    left: 5vw;
+    font-size: 1.5em;
+    color: #000 !important;
+    opacity: .8;
 }
 .own{
-    left:6vw;
+    left:21vw;
 }
 .two{
-    left:26vw;
+    left:38vw;
 }
 .three{
-    left:46vw;
+    left:55vw;
 }
 .four{
-    left:66vw;
+    left:72vw;
 }
 .five{
-    left:86vw;
+    left:89vw;
 }
 
 .ActivePageLink {
@@ -27,6 +32,6 @@
     color:red;
 }
 .listBlock{
-    margin-top: 3vw;
+    top: 1vw;
     position: relative;
 }

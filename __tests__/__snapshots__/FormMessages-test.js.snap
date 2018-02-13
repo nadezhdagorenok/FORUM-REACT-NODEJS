@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FormMessages /> Renders FormMessages 1`] = `
+<div
+  className="FormMessages"
+>
+  <form
+    className="FormForum"
+  >
+    <div
+      className="InputBlock"
+    >
+      <label
+        className="HeaderMessage"
+        htmlFor="header"
+      >
+        Header
+      </label>
+      <input
+        autoFocus={true}
+        className="Header-control"
+        id="header"
+        name="header"
+        onChange={[Function]}
+        placeholder="Type header"
+        required={true}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="InputBlock"
+    >
+      <label
+        className="TextMessage"
+        htmlFor="message"
+      >
+        Message
+      </label>
+      <textarea
+        className="Message-control"
+        id="message"
+        maxLength="140"
+        name="message"
+        onChange={[Function]}
+        placeholder="Type your message"
+        rows="7"
+        value=""
+      />
+    </div>
+    <button
+      className="SendButton"
+      disabled={true}
+      onClick={[Function]}
+      type="submit"
+    >
+      Send
+    </button>
+  </form>
+</div>
+`;

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render ForumTitle 1`] = `
+<div
+  className="ForumTitle"
+>
+  <h1>
+    Flower's Topics!
+  </h1>
+</div>
+`;
