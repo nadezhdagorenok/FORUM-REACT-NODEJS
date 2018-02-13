@@ -1,6 +1,5 @@
 import React from 'react';
 import MoneyForumBlock from '../components/MoneyForumBlock';
-import ForumImage from '../components/ForumImage';
 
 import appData from '../appData';
 

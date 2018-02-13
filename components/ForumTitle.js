@@ -3,17 +3,11 @@ import PropTypes from 'prop-types';
 
 import './ForumTitle.css';
 
-
 class ForumTitle extends React.PureComponent {
 
     static propTypes = {
         title: PropTypes.string.isRequired,
     };
-
-    // shouldComponentUpdate = (newProps) => {
-    //     return (newProps.title !== this.props.title);
-    // };
-    //
 
 
     render() {
@@ -23,5 +17,6 @@ class ForumTitle extends React.PureComponent {
                </div>;
     }
 }
+
 
 export default ForumTitle;

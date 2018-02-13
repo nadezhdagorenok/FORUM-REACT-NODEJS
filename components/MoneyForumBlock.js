@@ -116,7 +116,10 @@ class MoneyForumBlock extends React.PureComponent {
         console.log('Render MoneyForumBlock');
 
         if ( !this.state.dataReady )
-            return <div>data load...</div>;
+            return (<div className="preloader">
+                    <div className="loader"/>
+                </div>
+            );
 
         let messagesCode=this.state.messageArray.map( v =>
             <ForumHistory key={v.code} header={v.header} message={v.message} nameLink='Open' cbClickOpenLink={this.openMessage} />
@@ -126,7 +129,7 @@ class MoneyForumBlock extends React.PureComponent {
             <div className='ForumBlock'>
                 <ForumTitle title={this.props.title}/>
                 <FormMessages  cbSendClicked={this.formSubmit}
-                                valueButton='Send'
+                                valueButton='Send'//
                                 typeButton = 'submit'
                 />
                 <div className='CountMessage'>

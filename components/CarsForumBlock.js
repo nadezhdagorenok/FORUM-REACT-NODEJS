@@ -115,9 +115,10 @@ class CarsForumBlock extends React.PureComponent {
         console.log('Render ForumBlock');
 
         if ( !this.state.dataReady )
-            return <div class="preloader">
-                    <div class="loader"></div>
+            return (<div className="preloader">
+                    <div className="loader"/>
                 </div>
+            );
 
         let messagesCode=this.state.messageArray.map( v =>
             <ForumHistory key={v.code} header={v.header} message={v.message} nameLink='Open' cbClickOpenLink={this.openMessage} />
