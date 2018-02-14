@@ -11,9 +11,9 @@ app.use(bodyParser.json());
 
 let messages = {'cars' : [{header:'Car', message:'There are lots of cars', code:0},
                           {header:'Subaru', message:'There are lots of cars', code:1}],
-                'flowers' : [{header:'Flowers', message:'What bike do you prefer?', code:0}],
+                'flowers':[{header:'Flowers', message:'What bike do you prefer?', code:0}],
                 'money' : [{header:'Money', message:'All people like money...', code:0}],
-                'health' : [{header:'Health', message:'You  must check your health...', code:0}],
+                'health': [{header:'Health', message:'You  must check your health...', code:0}],
                 'shops' : [{header:'Shops', message:'Do you like shopping?', code:0}]
                };
 
